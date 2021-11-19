@@ -6,14 +6,18 @@ const faker = require('faker');
  * Seed some messages
  */
 
- for(let i =0; i < 40; i++){
+async function seedMessages() {
+
+}
+
+for (let i = 0; i < 40; i++) {
     var randomSentence = faker.lorem.sentence(6, 2);
 
 
     let msg = {
         content: randomSentence,
-        sender_id : faker.datatype.number(2,8),
-        receiver_id : faker.datatype.number(4, 10)
+        sender_id: faker.datatype.number(2, 8),
+        receiver_id: faker.datatype.number(4, 10)
     }
 
     messageController.createMessage(msg).then(() => {
@@ -21,3 +25,21 @@ const faker = require('faker');
     });
 
 }
+
+function createMessage(){
+    let msg = {
+        content: randomSentence,
+        sender_id: faker.datatype.number(2, 8),
+        receiver_id: faker.datatype.number(4, 10)
+    }
+    return msg
+}
+
+async function seedMessage(iterations){
+    for(let i = 0; i < iterations; i++){
+        const newContact = await createMessage();
+        messageController.createMessage(msg);
+    }
+}
+
+seedMessage(5);
