@@ -4,6 +4,13 @@ Coding Challenge repo for superchat done by Jeroen Smink 2021
 ## How to run
 Make sure you have Docker installed, then from the root of the project run `docker compose build` to build the Node.JS API. When that's finished run `docker compose up --force-recreate`. Docker will create the environment. Postgres has a special mount where I made sure a script is run to create and fill the database used in this project.
 
+**Techstack used**
+- Node.js
+- Postgres
+- Docker 🐳
+
+In the `src` directory you will find the source. Most logic is handled by the controllers and routes are placed in a seperate folder. These routers are later added to the `app` process of Node.JS
+
 ## About the project
 
 - ✔ Create contacts given their personal information (Name, E-Mail, etc)
