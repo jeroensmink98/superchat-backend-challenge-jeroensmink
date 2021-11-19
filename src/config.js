@@ -8,7 +8,10 @@ const config = {
     password: 'newPassword' ,
     database: 'superchat' ,
   },
-  db_local: {
+  /**
+   * These credentials are for a free Postgres Cluster on Elephant SQL
+   */
+  db_cloud: {
     host: 'tai.db.elephantsql.com',
     port: 5432,
     user: 'jnogztoy',
