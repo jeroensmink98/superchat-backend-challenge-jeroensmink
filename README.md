@@ -11,6 +11,8 @@ Make sure you have Docker installed, then from the root of the project run `dock
 
 In the `src` directory you will find the source. Most logic is handled by the controllers and routes are placed in a seperate folder. These routers are later added to the `app` process of Node.JS
 
+By default the Node API will run on **port 4000** and postgres on **5432**
+
 ## About the project
 
 - ✔ Create contacts given their personal information (Name, E-Mail, etc)
