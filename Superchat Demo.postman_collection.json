@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "897ab04c-14d9-47c0-9e90-c33c2131991c",
+		"_postman_id": "8eef5b15-dcfc-40a2-87a9-581b12a00443",
 		"name": "Superchat Demo",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -37,6 +37,18 @@
 							"port": "4000",
 							"path": [
 								"contacts"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "ElonMusk69",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "elon@tesla.com",
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -141,7 +153,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/messages?id=20",
+							"raw": "http://localhost:4000/messages?id=3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -153,7 +165,7 @@
 							"query": [
 								{
 									"key": "id",
-									"value": "20"
+									"value": "3"
 								}
 							]
 						}
@@ -166,7 +178,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4000/messages/conversation?sender_id=1&receiver_id=4",
+							"raw": "http://localhost:4000/messages/conversation?sender_id=1&receiver_id=2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -183,7 +195,7 @@
 								},
 								{
 									"key": "receiver_id",
-									"value": "4"
+									"value": "2"
 								}
 							]
 						}
@@ -216,7 +228,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:4000/messages",
+							"raw": "http://localhost:4000/messages?content=Hello {receiver_id} do you have {btc} usd in Bitcoin?&receiver_id=1&sender_id=3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -228,18 +240,15 @@
 							"query": [
 								{
 									"key": "content",
-									"value": "Hello user",
-									"disabled": true
+									"value": "Hello {receiver_id} do you have {btc} usd in Bitcoin?"
 								},
 								{
 									"key": "receiver_id",
-									"value": "54",
-									"disabled": true
+									"value": "1"
 								},
 								{
 									"key": "sender_id",
-									"value": "55",
-									"disabled": true
+									"value": "3"
 								}
 							]
 						}
@@ -251,7 +260,29 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:4000/messages/conversation?sender_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"messages",
+								"conversation"
+							],
+							"query": [
+								{
+									"key": "sender_id",
+									"value": "1"
+								},
+								{
+									"key": "receiver_id",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -260,7 +291,29 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:4000/messages/conversation?receiver_id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"messages",
+								"conversation"
+							],
+							"query": [
+								{
+									"key": "sender_id",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "receiver_id",
+									"value": "2"
+								}
+							]
+						}
 					},
 					"response": []
 				}
