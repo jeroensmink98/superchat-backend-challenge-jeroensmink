@@ -85,7 +85,7 @@ async function getMessagesByReceiver(receiver_id) {
  */
 async function createMessage(msg) {
     // Check if the message contains placeHolders
-    await containtsPlaceHolder(msg);
+    await containtsPlaceHolder(msg)
     const rows = await db.query(
         'INSERT INTO messages(content, sender_id, receiver_id) VALUES ($1, $2, $3) RETURNING * ',
         [msg.content, msg.sender_id, msg.receiver_id]
@@ -97,6 +97,8 @@ async function createMessage(msg) {
         message = 'Message created successfully';
     }
     return { message, msg }
+
+
 }
 
 
