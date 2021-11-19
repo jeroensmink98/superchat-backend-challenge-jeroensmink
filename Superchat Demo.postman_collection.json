@@ -1,0 +1,323 @@
+{
+	"info": {
+		"_postman_id": "8eef5b15-dcfc-40a2-87a9-581b12a00443",
+		"name": "Superchat Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Contacts",
+			"item": [
+				{
+					"name": "Post contact",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "MrRobot",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "hello@world.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/contacts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"contacts"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "ElonMusk69",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "elon@tesla.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all contacts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/contacts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get contact by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/contacts?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"contacts"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get contact by username",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/contacts?username=jeroensmink98",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"contacts"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "jeroensmink98"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Messages",
+			"item": [
+				{
+					"name": "Get all messages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/messages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get message by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/messages?id=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"messages"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get conversation between two contacts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/messages/conversation?sender_id=1&receiver_id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"messages",
+								"conversation"
+							],
+							"query": [
+								{
+									"key": "sender_id",
+									"value": "1"
+								},
+								{
+									"key": "receiver_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post message with placeholders in message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "content",
+									"value": "Hello {receiver_id} do you have {btc} usd in Bitcoin?",
+									"type": "text"
+								},
+								{
+									"key": "receiver_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "sender_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/messages?content=Hello {receiver_id} do you have {btc} usd in Bitcoin?&receiver_id=1&sender_id=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"messages"
+							],
+							"query": [
+								{
+									"key": "content",
+									"value": "Hello {receiver_id} do you have {btc} usd in Bitcoin?"
+								},
+								{
+									"key": "receiver_id",
+									"value": "1"
+								},
+								{
+									"key": "sender_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get conversation based on sender_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/messages/conversation?sender_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"messages",
+								"conversation"
+							],
+							"query": [
+								{
+									"key": "sender_id",
+									"value": "1"
+								},
+								{
+									"key": "receiver_id",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get conversation based on receiver_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/messages/conversation?receiver_id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"messages",
+								"conversation"
+							],
+							"query": [
+								{
+									"key": "sender_id",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "receiver_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
