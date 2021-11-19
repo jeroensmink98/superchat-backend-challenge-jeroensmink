@@ -191,7 +191,72 @@
 					"response": []
 				},
 				{
-					"name": "Post message",
+					"name": "Post message with placeholders in message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "content",
+									"value": "Hello {receiver_id} do you have {btc} usd in Bitcoin?",
+									"type": "text"
+								},
+								{
+									"key": "receiver_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "sender_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/messages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"messages"
+							],
+							"query": [
+								{
+									"key": "content",
+									"value": "Hello user",
+									"disabled": true
+								},
+								{
+									"key": "receiver_id",
+									"value": "54",
+									"disabled": true
+								},
+								{
+									"key": "sender_id",
+									"value": "55",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get conversation based on sender_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get conversation based on receiver_id",
 					"request": {
 						"method": "GET",
 						"header": [],
