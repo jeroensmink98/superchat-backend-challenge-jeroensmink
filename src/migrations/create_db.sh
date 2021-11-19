@@ -37,7 +37,11 @@ CREATE TABLE messages(
     updated_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
 
-
+INSERT INTO messages(content, sender_id, receiver_id) VALUES ('Hello sir', 1, 2);
+INSERT INTO messages(content, sender_id, receiver_id) VALUES ('Good day to you', 2, 1);
+INSERT INTO messages(content, sender_id, receiver_id) VALUES ('What are you doing?', 1, 2);
+INSERT INTO messages(content, sender_id, receiver_id) VALUES ('Good morning', 3, 1);
+INSERT INTO messages(content, sender_id, receiver_id) VALUES ('Goof afternoon to you', 3, 2);
 
 
 
