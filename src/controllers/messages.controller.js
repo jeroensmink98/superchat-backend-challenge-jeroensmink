@@ -101,7 +101,11 @@ async function createMessage(msg) {
 
 }
 
-
+/**
+ * Function is called for every post to message, it checks the content of the message for special
+ * tags predefined in the placeHolders object, 
+ * @param {object} msg 
+ */
 async function containtsPlaceHolder(msg) {
     if (msg.content.includes(placeHolders.receiver_id)) {
         await setUsernameInContent(msg);
@@ -111,6 +115,11 @@ async function containtsPlaceHolder(msg) {
     }
 }
 
+/**
+ * setUsernameInContent
+ * @param {object} msg 
+ * @returns A new message where the {receiver_id} is replaced with the usersname retrieved from the DB
+ */
 async function setUsernameInContent(msg) {
     return new Promise((resolve) => {
         contactsController.getContact(msg.receiver_id).then((response) => {
@@ -121,6 +130,12 @@ async function setUsernameInContent(msg) {
     });
 }
 
+/**
+ * setBtcPrice
+ * @param {object} msg 
+ * @returns a new message where the {btc} is replaced with the current Bitcoin price in USD retrieved 
+ * from coinbase
+ */
 async function setBtcPrice(msg) {
     return new Promise((resolve) => {
         btcController.currentBtcPrice().then((res) => {
