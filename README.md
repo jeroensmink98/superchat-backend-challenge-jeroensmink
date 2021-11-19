@@ -13,6 +13,10 @@ In the `src` directory you will find the source. Most logic is handled by the co
 
 By default the Node API will run on **port 4000** and postgres on **5432**
 
+The seeder was only used for local development and is not run when the application starts, a few test entries are added by the **.sql** script postgres executes.
+
+**Viel spaß!**
+
 ## About the project
 
 - ✔ Create contacts given their personal information (Name, E-Mail, etc)
