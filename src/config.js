@@ -9,14 +9,14 @@ const config = {
     database: 'superchat' ,
   },
   /**
-   * These credentials are for a free Postgres Cluster on Elephant SQL
+   * These credentials are for a free Postgres Cluster on Elephant SQL I used during development
    */
   db_cloud: {
-    host: 'tai.db.elephantsql.com',
+    host: '*************',
     port: 5432,
-    user: 'jnogztoy',
-    password: 'tA9SDQpMvXInS2IX0u49whCqsoVW-flA',
-    database: 'jnogztoy',
+    user: '************',
+    password: '*****************',
+    database: '************',
   }
 };
 
